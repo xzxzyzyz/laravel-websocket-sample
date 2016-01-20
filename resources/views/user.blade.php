@@ -245,7 +245,7 @@
     {{-- ソケット通信処理 --}}
     <script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
     <script>
-        var socket = io.connect('http://localhost:8890');
+        var socket = io.connect('{{ config('app.url') }}:8890');
         socket.on('channel-users:store', function (message) {
             user.addUser(message.user)
         })
