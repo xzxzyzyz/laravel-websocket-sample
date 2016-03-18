@@ -22,6 +22,7 @@ io.on('connection', function (socket) {
 
     redisClient.on('pmessage', function(subscribed, channel, message) {
         var message = JSON.parse(message);
+        console.log(channel)
         socket.emit('channel-' + channel, message.data);
     })
 
